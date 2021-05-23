@@ -4,8 +4,8 @@
  * Email: blagunas@infragistics.com 
  */
 using Infragistics.Windows.DockManager;
-using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Prism.Regions.Behaviors;
+using Prism.Regions;
+using Prism.Regions.Behaviors;
 using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;

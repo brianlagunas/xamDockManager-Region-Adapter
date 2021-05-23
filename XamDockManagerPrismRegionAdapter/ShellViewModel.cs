@@ -1,8 +1,8 @@
 ﻿using Infrastructure;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Unity;
 using ModuleA;
+using Prism.Commands;
+using Prism.Regions;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 

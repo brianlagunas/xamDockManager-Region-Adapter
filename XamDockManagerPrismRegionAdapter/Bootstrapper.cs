@@ -2,43 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
 using System.Windows;
-using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.Regions;
 using Infragistics.Windows.DockManager;
 using Infrastructure.Prism;
+using Prism.Unity;
+using Prism.Modularity;
+using Prism.Regions;
+using Prism.Ioc;
 
 namespace XamDockManagerPrismRegionAdapter
 {
-    public class Bootstrapper : UnityBootstrapper
+    public class Bootstrapper : PrismApplication
     {
-        protected override System.Windows.DependencyObject CreateShell()
+        protected override Window CreateShell()
         {
-            return Container.Resolve<Shell>();
+            return Container.Resolve<Shell>() ;
         }
 
-        protected override void InitializeShell()
+        protected void InitializeShell()
         {
-            base.InitializeShell();
+            InitializeShell();
 
-            App.Current.MainWindow = (Window)Shell;
+            //App.Current.MainWindow = (Window)Shell;
             App.Current.MainWindow.Show();
         }
 
-        protected override Microsoft.Practices.Prism.Modularity.IModuleCatalog CreateModuleCatalog()
+        protected override IModuleCatalog CreateModuleCatalog()
         {
-            ModuleCatalog catalog = new ModuleCatalog();
+            Prism.Modularity.ModuleCatalog catalog = new Prism.Modularity.ModuleCatalog();
             catalog.AddModule(typeof(ModuleA.ModuleAModule));
             return catalog;
         }
 
-        protected override Microsoft.Practices.Prism.Regions.RegionAdapterMappings ConfigureRegionAdapterMappings()
+        protected RegionAdapterMappings ConfigureRegionAdapterMappings()
         {
-            RegionAdapterMappings mappings = base.ConfigureRegionAdapterMappings();
+            RegionAdapterMappings mappings = ConfigureRegionAdapterMappings();
             mappings.RegisterMapping(typeof(TabGroupPane), Container.Resolve<TabGroupPaneRegionAdapter>());
             return mappings;
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
         }
     }
 }

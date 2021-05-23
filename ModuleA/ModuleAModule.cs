@@ -1,10 +1,10 @@
-﻿using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
+using Prism.Modularity;
+using Prism.Regions;
 
 namespace ModuleA
 {
-    public class ModuleAModule : IModule
+    public class ModuleAModule
     {
         IUnityContainer _container;
         IRegionManager _manager;
