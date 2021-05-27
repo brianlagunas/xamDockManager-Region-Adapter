@@ -56,7 +56,7 @@
                 </igWPF:XamDataGrid.InputBindings>
             </igWPF:XamDataGrid>
 
-            <igWPF:XamDockManager Grid.Column="1" >
+            <igWPF:XamDockManager Grid.Column="1" ToolWindowLoaded="XamDockManager_ToolWindowLoaded">
                 <igWPF:DocumentContentHost>
                     <igWPF:SplitPane>
                         <!-- Give the TabGroupPane a name with the x:Name attribute so that the region is not destroyed when all views have been removed from the region -->

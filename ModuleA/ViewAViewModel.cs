@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using Infrastructure.Prism;
-using Microsoft.Practices.Prism;
+using Prism;
 
 namespace ModuleA
 {
