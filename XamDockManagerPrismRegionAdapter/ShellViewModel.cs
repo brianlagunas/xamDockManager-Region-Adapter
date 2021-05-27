@@ -1,10 +1,10 @@
 ﻿using Infrastructure;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Unity;
+using Prism.Commands;
+using Prism.Regions;
 using ModuleA;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Unity;
 
 namespace XamDockManagerPrismRegionAdapter
 {

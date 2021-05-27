@@ -1,6 +1,7 @@
-﻿using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Unity;
+﻿using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Regions;
+using Unity;
 
 namespace ModuleA
 {
@@ -18,6 +19,16 @@ namespace ModuleA
         public void Initialize()
         {
 
+        }
+
+        public void OnInitialized(IContainerProvider containerProvider)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            //throw new System.NotImplementedException();
         }
     }
 }
