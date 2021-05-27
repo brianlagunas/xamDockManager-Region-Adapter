@@ -12,5 +12,10 @@ namespace XamDockManagerPrismRegionAdapter
             InitializeComponent();
             DataContext = viewModel;
         }
+
+        private void XamDockManager_ToolWindowLoaded(object sender, Infragistics.Windows.DockManager.Events.PaneToolWindowEventArgs e)
+        {
+            e.Window.UseOSNonClientArea = false;
+        }
     }
 }
