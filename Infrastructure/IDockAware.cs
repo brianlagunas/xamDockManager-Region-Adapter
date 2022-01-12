@@ -4,7 +4,7 @@
  * Email: blagunas@infragistics.com 
  */
 
-namespace Infrastructure.Prism
+namespace Infrastructure
 {
     public interface IDockAware
     {

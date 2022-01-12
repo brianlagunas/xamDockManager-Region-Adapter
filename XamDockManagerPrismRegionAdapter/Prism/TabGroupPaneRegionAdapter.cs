@@ -5,9 +5,8 @@
  */
 using Infragistics.Windows.DockManager;
 using Infragistics.Windows.DockManager.Events;
-using Microsoft.Practices.Prism.Regions;
+using Prism.Regions;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Windows;

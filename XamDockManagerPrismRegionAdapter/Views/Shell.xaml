@@ -1,19 +1,11 @@
-﻿<Window xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"  x:Class="XamDockManagerPrismRegionAdapter.Shell"
+﻿<Window x:Class="XamDockManagerPrismRegionAdapter.Views.Shell"
+        xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:inf="clr-namespace:Infrastructure;assembly=Infrastructure"
-        Title="Shell" Height="600" Width="1024"  
         xmlns:prism="http://www.codeplex.com/prism"
-        xmlns:moduleA="clr-namespace:ModuleA;assembly=ModuleA">
-
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type moduleA:ViewAViewModel}">
-            <StackPanel TextBlock.TextAlignment="Center" TextBlock.FontSize="24" VerticalAlignment="Center">
-                <TextBlock Text="{Binding Number}" />
-                <TextBlock Text="{Binding IsActive, StringFormat=IsActive: {0}}" />
-            </StackPanel>
-        </DataTemplate>
-    </Window.Resources>
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:inf="clr-namespace:Infrastructure;assembly=Infrastructure"
+        Title="Shell" Height="600" Width="1024">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Menu>
-            <MenuItem Header="Activate" Command="{Binding ActivateCommand}" CommandParameter="{Binding ActiveDataItem, ElementName=_xamDataGrid}" />
+            <MenuItem Header="Open" Command="{Binding OpenCommand}" CommandParameter="{Binding ActiveDataItem, ElementName=_xamDataGrid}" />
             <MenuItem Header="Close" Command="{Binding CloseCommand}" CommandParameter="{Binding ActiveDataItem, ElementName=_xamDataGrid}" />
         </Menu>
 
@@ -45,8 +37,7 @@
                 <igWPF:XamDataGrid.FieldLayouts>
                     <igWPF:FieldLayout>
                         <igWPF:FieldLayout.Fields>
-                            <igWPF:Field Name="Number"/>
-                            <igWPF:Field Name="IsActive"/>
+                            <igWPF:Field Name="Id"/>
                         </igWPF:FieldLayout.Fields>
                     </igWPF:FieldLayout>
                 </igWPF:XamDataGrid.FieldLayouts>
@@ -60,14 +51,7 @@
                 <igWPF:DocumentContentHost>
                     <igWPF:SplitPane>
                         <!-- Give the TabGroupPane a name with the x:Name attribute so that the region is not destroyed when all views have been removed from the region -->
-                        <igWPF:TabGroupPane x:Name="_tabGroupPaneOne" prism:RegionManager.RegionName="{x:Static inf:KnownRegionNames.TabGroupPaneOne}">
-                            <igWPF:ContentPane TabHeader="Default 1">
-                                <TextBlock Text="Content" />
-                            </igWPF:ContentPane>
-                            <igWPF:ContentPane TabHeader="Default 2">
-                                <TextBlock Text="Content" />
-                            </igWPF:ContentPane>
-                        </igWPF:TabGroupPane>
+                        <igWPF:TabGroupPane x:Name="_tabGroupPaneOne" prism:RegionManager.RegionName="{x:Static inf:KnownRegionNames.TabGroupPaneOne}"/>
                     </igWPF:SplitPane>
                 </igWPF:DocumentContentHost>
             </igWPF:XamDockManager>

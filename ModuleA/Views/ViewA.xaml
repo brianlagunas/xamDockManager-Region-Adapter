@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="ModuleA.Views.ViewA"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <StackPanel TextBlock.TextAlignment="Center" TextBlock.FontSize="24" VerticalAlignment="Center">
+        <TextBlock Text="{Binding Id}" />
+        <TextBlock Text="{Binding IsActive, StringFormat=IsActive: {0}}" />
+    </StackPanel>
+</UserControl>

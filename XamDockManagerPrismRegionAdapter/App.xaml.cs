@@ -1,23 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+﻿using Infragistics.Windows.DockManager;
+using Infrastructure.Prism;
+using ModuleA;
+using Prism.DryIoc;
+using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Regions;
 using System.Windows;
+using XamDockManagerPrismRegionAdapter.Views;
 
 namespace XamDockManagerPrismRegionAdapter
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected override Window CreateShell()
         {
-            base.OnStartup(e);
+            return Container.Resolve<Shell>();
+        }
 
-            var bs = new Bootstrapper();
-            bs.Run();
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<ModuleAModule>();
+        }
+
+        protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
+        {
+            regionAdapterMappings.RegisterMapping(typeof(TabGroupPane), Container.Resolve<TabGroupPaneRegionAdapter>());
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+
         }
     }
 }

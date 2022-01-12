@@ -1,16 +1,15 @@
 ﻿using System.Windows;
 
-namespace XamDockManagerPrismRegionAdapter
+namespace XamDockManagerPrismRegionAdapter.Views
 {
     /// <summary>
     /// Interaction logic for Shell.xaml
     /// </summary>
     public partial class Shell : Window
     {
-        public Shell(ShellViewModel viewModel)
+        public Shell()
         {
             InitializeComponent();
-            DataContext = viewModel;
         }
     }
 }

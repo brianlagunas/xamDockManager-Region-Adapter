@@ -1,23 +1,20 @@
-﻿using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.Regions;
-using Microsoft.Practices.Unity;
+﻿using ModuleA.ViewModels;
+using ModuleA.Views;
+using Prism.Ioc;
+using Prism.Modularity;
 
 namespace ModuleA
 {
     public class ModuleAModule : IModule
     {
-        IUnityContainer _container;
-        IRegionManager _manager;
-
-        public ModuleAModule(IUnityContainer container, IRegionManager manager)
+        public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            _container = container;
-            _manager = manager;
+            containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
         }
 
-        public void Initialize()
+        public void OnInitialized(IContainerProvider containerProvider)
         {
-
+            
         }
     }
 }

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "224d5184-cab9-4463-8220-4897d3a5cfdc": {
+      "ProjectGuid": "224d5184-cab9-4463-8220-4897d3a5cfdc",
+      "DisplayName": "Infrastructure",
+      "ColorIndex": 0
+    },
+    "4e97017c-b96a-4f14-83b7-bf5020bb6db2": {
+      "ProjectGuid": "4e97017c-b96a-4f14-83b7-bf5020bb6db2",
+      "DisplayName": "ModuleA",
+      "ColorIndex": 1
+    },
+    "711f9503-01ed-475e-b2b4-458e8ef907a2": {
+      "ProjectGuid": "711f9503-01ed-475e-b2b4-458e8ef907a2",
+      "DisplayName": "XamDockManagerPrismRegionAdapter",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
